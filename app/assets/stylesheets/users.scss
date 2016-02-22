@@ -4,7 +4,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 .user-form {
   padding-top: 60px;
 }
@@ -97,3 +96,209 @@
 #error_explanation {
   color: #ed6051;
 }
+
+
+.todo{
+  margin: 50px auto;
+  width: 600px;
+}
+/*head*/
+.todo-head {
+  overflow: hidden; 
+  background: #3C5CA3;
+  background: -moz-linear-gradient(#98B0D2, #3C5CA3);
+  background: -webkit-linear-gradient(#98B0D2, #3C5CA3);
+  background: -o-linear-gradient(#98B0D2, #3C5CA3);
+  background: -ms-linear-gradient(#98B0D2, #3C5CA3);
+  background: linear-gradient(#98B0D2, #3C5CA3);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.glyphicon-list.head {
+  color: red;
+  font-size: 115%;
+  padding-right: 5px;
+}
+
+.list-pencil {
+  border-right: solid 1px #98B0D2; 
+}
+
+.title {
+  float: left;
+}
+
+.todo-controls {
+  float: right;
+  display: none;
+}
+
+.list-controls {
+  color: #98B0D2;
+  text-decoration: none;
+  padding-right: 5px;
+  padding-left: 5px;
+ &:hover {
+  color: white;
+  text-decoration: none; 
+ }
+}
+
+#project-edit {
+  width: 500px;
+  height: 29px;
+}
+
+.proj-name {
+  display: inline-block;
+}
+
+/*input*/
+
+.todo-input {
+  overflow: hidden;
+  background: #CDCDCD;
+  background: -moz-linear-gradient(#DFDFDF, #CDCDCD);
+  background: -webkit-linear-gradient(#DFDFDF, #CDCDCD);
+  background: -o-linear-gradient(#DFDFDF, #CDCDCD);
+  background: -ms-linear-gradient(#DFDFDF, #CDCDCD);
+  background: linear-gradient(#DFDFDF, #CDCDCD);
+}
+
+.glyphicon-plus.add {
+  float: left;
+  color: #589072;
+  font-size: 150%;
+  margin-top: 12px;
+  margin-left: 13px;
+  margin-right: 8px;
+}
+
+.task-input {
+  padding: 8px;
+}
+
+.btn-task {
+  background: #508767;
+  background: -moz-linear-gradient(#91C8AB, #508767);
+  background: -webkit-linear-gradient(#91C8AB, #508767);
+  background: -o-linear-gradient(#91C8AB, #508767);
+  background: -ms-linear-gradient(#91C8AB, #508767);
+  background: linear-gradient(#91C8AB, #508767);
+  color: white;
+}
+
+/* tasks */
+
+
+.task {
+  background: white;
+  border-bottom: 1px solid #ccc;
+  height: auto;
+  color: #999999;
+  cursor: pointer;
+  &:last-child {
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  &:hover {
+    background: #FCFED5;
+    .col-xs-2 {
+      display: block;
+    }
+  }
+}
+
+.checkbox-field {
+    width: 5%;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    margin-right: 6px;
+    height: 100%;
+}
+
+.task-field {
+    word-wrap: break-word;
+    border-left: 7px double #EFDADF;
+    border-right: 1px solid #ccc;
+    width: 75%;
+    text-align: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.taskcontrol-field {
+    display: none;
+    width: auto;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    height: 100%;
+}
+
+.task-pencil {
+  display: inline;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  text-decoration: none;
+  color: #999999;
+  &:hover {
+    text-decoration:none;
+    color: #999999;
+  }
+}
+
+.task-trash {
+  padding-left: 8px;
+}
+
+.arrows {
+  display: inline-block;
+  line-height: 0;
+  margin-bottom: -4px;
+  padding-right: 8px;
+}
+
+.task-arrow-top {
+  display: table-header-group;
+  cursor: pointer;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  font-size: x-small;
+  text-decoration: none;
+  color: #999999;
+  &:hover {
+    text-decoration:none;
+    color: #999999;
+  }
+}
+
+.task-arrow-bottom {
+  display: table-footer-group;
+  cursor: pointer;
+  margin-top: 0px;
+  padding-top: 0px;
+  font-size: x-small;
+  text-decoration: none;
+  color: #999999;
+  &:hover {
+    text-decoration:none;
+    color: #999999;
+  }
+}
+
+
+
+
+.task-trash {
+  text-decoration: none;
+  color: #999999;
+  &:hover {
+    text-decoration:none;
+    color: #999999;
+  }
+}
+

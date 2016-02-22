@@ -1,0 +1,18 @@
+.todo
+  .todo-head
+    .title
+      .glyphicon.glyphicon-list.head
+      .proj-name{:id => "#{project.id}"}
+        = project.name
+    .todo-controls
+      = link_to edit_project_path(project), {remote: true, class: "list-controls list-pencil"} do 
+        .glyphicon.glyphicon-pencil
+      = link_to project_path(project), {remote: true, method: :delete, class: "list-controls"} do
+        .glyphicon.glyphicon-trash
+  .todo-input
+    .glyphicon.glyphicon-plus.add
+    .input-group.input-group-md.task-input
+      %input.form-control{:placeholder => "Start typing here to create a task...", :type => "text"}
+      %span.input-group-btn
+        = link_to '#', {remote: true, class: "btn btn-task", :type => "button"} do
+          Add Task

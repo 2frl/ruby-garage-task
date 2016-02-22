@@ -1,0 +1,2 @@
+= form_for @project, remote: true, class: "input-group input-group-sm", id: 'project-form' do |f|
+  = f.text_field :name, autofocus: true, id: 'project-edit', class: "form-control", :onblur => '$(this.form).submit();'

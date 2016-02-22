@@ -14,3 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('.todo-head').hover((function() {
+    $($(this).children(".todo-controls")).show();
+  }), function() {
+    $($(this).children(".todo-controls")).hide();
+  });
+});
+
+$(document).ajaxComplete(function() {
+  $('.todo-head').hover((function() {
+    $($(this).children(".todo-controls")).show();
+  }), function() {
+    $($(this).children(".todo-controls")).hide();
+  });
+});
+

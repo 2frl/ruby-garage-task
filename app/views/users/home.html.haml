@@ -1,2 +1,8 @@
 =@user.email
 =link_to 'Logout', destroy_user_session_path, method: :delete
+= link_to create_project_path, {remote: true, class: "btn btn-project", :type => "button", method: :post} do
+  Add project
+.projects
+  = render @projects
+
+
