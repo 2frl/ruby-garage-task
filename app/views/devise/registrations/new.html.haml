@@ -1,21 +1,32 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.container.user-form
+  .row
+    .col-md-6.col-md-offset-3
+      .panel.panel-login
+        .panel-heading
+          .row
+            .col-lg-12.text-center
+              %h3 Sign up
+          %hr/
+        .panel-body
+          .row
+            .col-lg-12
+              = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+                .form-group
+                  = devise_error_messages!
+                .form-group
+                  = f.email_field :email, class: "form-control", placeholder: "Email Address"
+                .form-group
+                  = f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-control"
+                  - if @minimum_password_length
+                    %em
+                      (#{@minimum_password_length} characters minimum)
+                .form-group
+                  = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation", class: "form-control"
+                .form-group
+                  .row
+                    .col-sm-6.col-sm-offset-3
+                      = f.submit "Sign up", class: "form-control btn btn-register"
+              .form-group
+                .row
+                  .col-lg-12.text-center
+                    = render "devise/shared/links"
