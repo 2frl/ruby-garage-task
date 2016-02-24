@@ -1,0 +1,4 @@
+$('#tasks<%=@project.id%>').html("");
+$('#tasks<%=@project.id%>').append("<%= escape_javascript(render @project.tasks) %>");
+
+

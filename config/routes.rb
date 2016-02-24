@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users, path: ''
   root 'users#home'
   resources :projects
+  resources :tasks
   post 'create_project' => 'projects#create', as: 'create_project'
+  post 'task/:project_id' => 'tasks#create', as: 'create_task'
+  get 'task_up/:id' => 'tasks#moveup', as: 'task_moveup'
+  get 'task_down/:id' => 'tasks#movedown', as: 'task_movedown'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

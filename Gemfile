@@ -48,4 +48,5 @@ end
 gem 'haml'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'acts_as_list'
 
