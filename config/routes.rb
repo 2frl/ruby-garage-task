@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :tasks
   post 'create_project' => 'projects#create', as: 'create_project'
   post 'task/:project_id' => 'tasks#create', as: 'create_task'
-  get 'task_up/:id' => 'tasks#moveup', as: 'task_moveup'
-  get 'task_down/:id' => 'tasks#movedown', as: 'task_movedown'
+  patch 'task_up/:id' => 'tasks#moveup', as: 'task_moveup'
+  patch 'task_down/:id' => 'tasks#movedown', as: 'task_movedown'
+  patch 'progress/:id' =>'tasks#progress', as: 'task_progress'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

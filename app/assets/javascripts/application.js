@@ -15,19 +15,30 @@
 //= require turbolinks
 //= require_tree .
 
-$(function() {
-  $('.todo-head').hover((function() {
-    $($(this).children(".todo-controls")).show();
-  }), function() {
-    $($(this).children(".todo-controls")).hide();
+$(document).ready(function() {
+  $(function() {
+    $('.todo-head').hover((function() {
+      $($(this).children(".todo-controls")).show();
+    }), function() {
+      $($(this).children(".todo-controls")).hide();
+    });
   });
-});
 
-$(document).ajaxComplete(function() {
-  $('.todo-head').hover((function() {
-    $($(this).children(".todo-controls")).show();
-  }), function() {
-    $($(this).children(".todo-controls")).hide();
+  $(document).ajaxComplete(function() {
+    $('.todo-head').hover((function() {
+      $($(this).children(".todo-controls")).show();
+    }), function() {
+      $($(this).children(".todo-controls")).hide();
+    });
   });
-});
 
+
+
+});
+  function checkit() {
+    $.ajax({
+      url: '/progress/'+ $(this).data('id'),
+      type: 'PATCH',
+      data: { task_params: $(this).is(':checked') }
+    });
+  }

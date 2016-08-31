@@ -12,9 +12,9 @@
   .todo-input
     .glyphicon.glyphicon-plus.add
     .input-group.input-group-md.task-input
-      = form_for(:task, remote: true, url: create_task_path(project.id), ) do |f| 
+      = form_for(:task, remote: true, url: create_task_path(project.id), html: {class: "task-form" }) do |f| 
         = f.text_field :name, placeholder: "Start typing here to create a task...", class: "form-control"
-        %span.input-group-btn
+        .input-group-btn
           = f.submit "Add Task", class: "btn btn-task"
   .tasks
     .container-fluid{:id => "tasks#{project.id}"}

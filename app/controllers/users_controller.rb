@@ -3,6 +3,6 @@ class UsersController < ApplicationController
 
   def home
     @user = current_user
-    @projects = @user.projects.all()
+    @projects = @user.projects
   end
 end

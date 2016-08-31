@@ -4,6 +4,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  background-image: image-url('background.jpg');
+}
+
 .user-form {
   padding-top: 60px;
 }
@@ -50,6 +54,9 @@
   text-transform: uppercase;
   border-color: #59B2E6;
 }
+
+
+
 .btn-login:hover,
 .btn-login:focus {
   color: #fff;
@@ -117,9 +124,10 @@
 }
 
 .glyphicon-list.head {
-  color: red;
+  color: #98B0D2;
   font-size: 115%;
   padding-right: 5px;
+  padding-bottom: 2px;
 }
 
 .list-pencil {
@@ -178,6 +186,11 @@
 
 .task-input {
   padding: 8px;
+  width: 90%;
+}
+
+.task-form {
+  display: inline-table;
 }
 
 .btn-task {
@@ -300,5 +313,36 @@
     text-decoration:none;
     color: #999999;
   }
+}
+
+.addprojects {
+  width: 100px;
+  margin: 50px auto;
+}
+
+.header {
+  text-align: right;
+  padding-right: 30px;
+}
+
+.project-plus {
+  padding-right: 5px;
+  color: #2F4870;
+  font-size: 16px;
+}
+
+
+.btn-project {
+  align-self: center;
+  color: #fff;
+  height: auto;
+  font-weight: normal;
+  border-color: #315589;
+  background: #3D65A9;
+  background: -moz-linear-gradient(#5180C2, #385AA3);
+  background: -webkit-linear-gradient(#5180C2, #385AA3);
+  background: -o-linear-gradient(#5180C2, #385AA3);
+  background: -ms-linear-gradient(#5180C2, #385AA3);
+  background: linear-gradient(#5180C2, #385AA3);
 }
 

@@ -1,16 +1,15 @@
 .row.task
   .checkbox-field.col-xs-1
-    %input{:type => "checkbox"}
-  .task-field.col-xs-9
+    = check_box_tag 'task-progress', 1, task.progress, onchange: 'checkit.call(this, event)', autocomplete: :off, data: {id: task.id}
+  .task-field.col-xs-9{:id => "task#{task.id}"}
     = task.name
   .taskcontrol-field.col-xs-2
     .arrows
-      =link_to task_moveup_path(task.id), {remote: true, class: "task-arrow-top"} do
+      =link_to task_moveup_path(task.id), {remote: true, method: :patch, class: "task-arrow-top"} do
         .glyphicon.glyphicon-triangle-top
-      =link_to task_movedown_path(task.id), {remote: true, class: "task-arrow-bottom"} do
+      =link_to task_movedown_path(task.id), {remote: true, method: :patch, class: "task-arrow-bottom"} do
         .glyphicon.glyphicon-triangle-bottom
-    =link_to '#', {remote: true, class: "task-pencil"} do
+    =link_to edit_task_path(task.id), {remote: true, class: "task-pencil"} do
       .glyphicon.glyphicon-pencil
-    =link_to task_path(task), {remote: true, method: :delete, class: "task-trash "} do
+    =link_to task_path(task.id), {remote: true, method: :delete, class: "task-trash "} do
       .glyphicon.glyphicon-trash
-

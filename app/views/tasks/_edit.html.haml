@@ -1,0 +1,2 @@
+= form_for @task, remote: true, class: "input-group input-group-sm" do |f|
+  = f.text_field :name, autofocus: true, class: "form-control", :onblur => '$(this.form).submit();'
