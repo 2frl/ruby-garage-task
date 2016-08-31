@@ -1,28 +1,23 @@
-== README
+SQL Task:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1)SELECT distinct status FROM tasks ORDER BY status ASC
 
-Things you may want to cover:
+2)SELECT projects.name, COUNT(tasks.project_id) AS amount
+ FROM projects LEFT JOIN tasks on projects.id = tasks.project_id GROUP BY project_id ORDER BY amount DESC
 
-* Ruby version
+3)SELECT projects.name, COUNT(tasks.project_id) AS amount
+ FROM projects LEFT JOIN tasks on projects.id = tasks.project_id GROUP BY project_id ORDER BY name
 
-* System dependencies
+4)SELECT projects.name, tasks.name
+ FROM projects  LEFT JOIN tasks on projects.id = tasks.project_id where projects.name like 'N%' ORDER BY projects.name
 
-* Configuration
+5)SELECT projects.name, COUNT(tasks.project_id) AS amount
+ FROM projects LEFT JOIN tasks on projects.id = tasks.project_id where projects.name like '%a%' GROUP BY project_id ORDER BY name
 
-* Database creation
+6)SELECT name, COUNT(*) FROM tasks
+GROUP BY name HAVING  COUNT(*) > 1 ORDER by name 
 
-* Database initialization
+7)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+8)SELECT projects.name, COUNT(tasks.project_id) as amount from projects left join tasks on tasks.project_id = projects.id
+ and tasks.status = 'completed' GROUP BY projects.id having COUNT(tasks.project_id)>1 ORDER by projects.id
